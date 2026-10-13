@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikash Vishwakarma | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #08111f;
+    color: white;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #07101c;
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.logo {
+    font-size: 27px;
+}
+
+.logo span,
+.title span,
+.hero h1 span,
+footer span {
+    color: #00e5ff;
+}
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;   
+}
+
+ .nav-links a:hover{
+  color: #00e5ff;
+ }
+
+#menu {
+    display: none;
+    background: none;
+    color: white;
+    border: 0;
+    font-size: 25px;
+}
+
+.hero {
+    min-height: 90vh;
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 600px;
+}
+
+.hello {
+    color: #00e5ff;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin: 15px 0;
+}
+
+.hero h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.hero-text > p:not(.hello) {
+    line-height: 1.7;
+    color: #b7c3d0;
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00e5ff;
+    color: #06101d;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: 2px solid #00e5ff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.outline {
+    background: transparent;
+    color: #00e5ff;
+    margin-left: 10px;
+}
+
+.profile-box {
+    border: 2px solid #00e5ff;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.profile {
+   background-image: url("my image.png");
+   background-size: cover;
+}
+
+.section {
+    padding: 80px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.dark {
+    max-width: none;
+    background: #0d1b2b;
+}
+
+.title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 45px;
+}
+
+.about-box,
+.education-card,
+.training {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background: #101f32;
+    border: 1px solid #203952;
+    border-radius: 15px;
+}
+
+.about-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.about-box h3,
+.education-card h3,
+.training h3 {
+    margin-bottom: 15px;
+}
+
+.about-box p,
+.education-card p,
+.training p {
+    color: #b7c3d0;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.about-info p {
+    border-bottom: 1px solid #29415a;
+    padding: 10px;
+}
+
+.education-card,
+.training {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.edu-icon,
+.training-icon {
+    font-size: 40px;
+}
+
+.tag,
+.project-tech span {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 15px;
+    background: #12384a;
+    color: #00e5ff;
+    margin-top: 8px;
+}
+
+.skills-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.skill-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.bar {
+    height: 9px;
+    background: #26384b;
+    border-radius: 10px;
+}
+
+.bar div {
+    height: 100%;
+    background: #00e5ff;
+    border-radius: 10px;
+}
+
+.project-container,
+.achievement-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.project-card,
+.achievement {
+    padding: 30px;
+    background: #101f32;
+    border: 1px solid #29415a;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.project-card:hover,
+.achievement:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+}
+
+.project-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.project-card h3,
+.achievement h3 {
+    margin-bottom: 12px;
+}
+
+.project-card p,
+.achievement p {
+    color: #b7c3d0;
+    line-height: 1.6;
+}
+
+.project-tech {
+    margin-top: 15px;
+}
+
+.project-tech span {
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.contact-container {
+    max-width: 950px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info p {
+    color: #b7c3d0;
+    line-height: 1.7;
+    margin: 15px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #29415a;
+    border-radius: 8px;
+    background: #101f32;
+    color: white;
+}
+
+textarea {
+    height: 130px;
+    resize: none;
+}
+
+.social a {
+    display: inline-block;
+    color: #00e5ff;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    background: #050b13;
+}
+
+footer p {
+    margin-top: 10px;
+    color: #9eabb8;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        background: #07101c;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .profile {
+        width: 170px;
+        height: 170px;
+        font-size: 70px;
+    }
+
+    .about-box,
+    .contact-container,
+    .project-container,
+    .achievement-container {
+        grid-template-columns: 1fr;
+    }
+
+    .education-card,
+    .training {
+        flex-direction: column;
+    }
+}
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<header>
+    <nav class="navbar">
+        <h2 class="logo">Vikash<span>.</span></h2>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <button id="menu">☰</button>
+    </nav>
+</header>
+
+
+<!-- Home -->
+<section id="home" class="hero">
+
+    <div class="hero-text">
+        <p class="hello">HELLO, I'M</p>
+
+        <h1>Vikash <span>Vishwakarma</span></h1>
+
+        <h3>B.Tech Computer Science Student</h3>
+
+        <p>
+            I am a Computer Science student interested in
+            Web Development, Programming and Software Development.
+        </p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn">View Projects</a>
+            <a href="#contact" class="btn outline">Contact Me</a>
+        </div>
+    </div>
+
+    <div class="profile-box">
+        <div class="profile">
+            👨‍💻
+        </div>
+    </div>
+
+</section>
+
+
+<!-- About -->
+<section id="about" class="section">
+
+    <h2 class="title">About <span>Me</span></h2>
+
+    <div class="about-box">
+
+        <div>
+            <h3>Who Am I?</h3>
+
+            <p>
+                I am Vikash Vishwakarma, a B.Tech Computer Science
+                student at AKS University, Satna. I am learning
+                programming and web development and interested in
+                building useful and creative websites.
+            </p>
+
+            <p>
+                My goal is to improve my technical skills and
+                develop real-world software projects.
+            </p>
+        </div>
+
+        <div class="about-info">
+            <p><b>Course:</b> B.Tech CSE</p>
+            <p><b>University:</b> AKS University, Satna</p>
+            <p><b>Interest:</b> Web Development</p>
+            <p><b>Learning:</b> JavaScript & Full Stack</p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Education -->
+<section id="education" class="section dark">
+
+    <h2 class="title">My <span>Education</span></h2>
+
+    <div class="education-card">
+
+        <div class="edu-icon">🎓</div>
+
+        <div>
+            <h3>B.Tech – Computer Science & Engineering</h3>
+            <h4>AKS University, Satna</h4>
+
+            <p>
+                Currently pursuing Bachelor of Technology in
+                Computer Science and Engineering.
+            </p>
+
+            <span class="tag">B.Tech CSE</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Skills -->
+<section id="skills" class="section">
+
+    <h2 class="title">Technical <span>Skills</span></h2>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <div class="skill-top">
+                <span>C Programming</span>
+                <span>75%</span>
+            </div>
+            <div class="bar">
+                <div style="width:75%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-top">
+                <span>Java</span>
+                <span>70%</span>
+            </div>
+            <div class="bar">
+                <div style="width:70%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-top">
+                <span>HTML</span>
+                <span>85%</span>
+            </div>
+            <div class="bar">
+                <div style="width:85%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-top">
+                <span>CSS</span>
+                <span>80%</span>
+            </div>
+            <div class="bar">
+                <div style="width:80%"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-top">
+                <span>JavaScript</span>
+                <span>60%</span>
+            </div>
+            <div class="bar">
+                <div style="width:60%"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Projects -->
+<section id="projects" class="section dark">
+
+    <h2 class="title">My <span>Projects</span></h2>
+
+    <div class="project-container">
+
+        <div class="project-card">
+            <div class="project-icon">🌐</div>
+
+            <h3>MP Tourism Website</h3>
+
+            <p>
+                A tourism website showcasing tourist places,
+                districts and important attractions of Madhya Pradesh.
+            </p>
+
+            <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <div class="project-icon">🧮</div>
+
+            <h3>Calculator Website</h3>
+
+            <p>
+                A simple and interactive calculator designed
+                using HTML, CSS and JavaScript.
+            </p>
+
+            <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <div class="project-icon">📚</div>
+
+            <h3>Library Management System</h3>
+
+            <p>
+                A database-based project for managing books,
+                students and library records.
+            </p>
+
+            <div class="project-tech">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>DBMS</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Certifications -->
+<section class="section">
+
+    <h2 class="title">Certifications & <span>Achievements</span></h2>
+
+    <div class="achievement-container">
+
+        <div class="achievement">
+            🏆
+            <h3>Technical Learning</h3>
+            <p>
+                Continuously improving programming and
+                web development skills.
+            </p>
+        </div>
+
+        <div class="achievement">
+            💻
+            <h3>Academic Projects</h3>
+            <p>
+                Developed multiple academic projects using
+                programming and web technologies.
+            </p>
+        </div>
+
+        <div class="achievement">
+            🚀
+            <h3>Web Development</h3>
+            <p>
+                Learning modern web development and
+                full-stack technologies.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Training -->
+<section class="section dark">
+
+    <h2 class="title">Internship / <span>Training</span></h2>
+
+    <div class="training">
+
+        <div class="training-icon">📖</div>
+
+        <div>
+            <h3>Web Development Training</h3>
+
+            <p>
+                Currently developing practical knowledge of
+                HTML, CSS, JavaScript and web development
+                through academic and personal projects.
+            </p>
+
+            <span class="tag">Learning & Development</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- Contact -->
+<section id="contact" class="section">
+
+    <h2 class="title">Contact <span>Me</span></h2>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <h3>Let's Connect!</h3>
+
+            <p>
+                Feel free to connect with me for projects,
+                learning opportunities and professional networking.
+            </p>
+
+            <p>📧 Email: vikash438431email@.com</p>
+            <p>📱 Phone: 9479438431</p>
+            <p>📍 Location: Satna, Madhya Pradesh</p>
+
+            <div class="social">
+                <a href="https://github.com/av718802-png" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/vikash-vishwakarma-64349943b?utm_source=share_via&utm_content=profile&utm_medium=member_android">LinkedIn</a>
+            </div>
+
+        </div>
+
+
+        <form id="contactForm">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Your Message" required></textarea>
+
+            <button type="submit" class="btn">
+                Send Message
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- Footer -->
+<footer>
+
+    <h3>Vikash<span>.</span></h3>
+
+    <p>© 2026 Vikash Vishwakarma | Portfolio Website</p>
+
+</footer>
+
+
+<script>
+
+    // Mobile Menu
+let menu = document.getElementById("menu");
+let nav = document.querySelector(".nav-links");
+
+menu.onclick = function () {
+    nav.classList.toggle("active");
+};
+
+
+// Contact Form
+let form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Thank you! Your message has been submitted.");
+
+    form.reset();
+});
+</script>
+
+</body>
+</html>
